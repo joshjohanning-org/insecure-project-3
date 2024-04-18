@@ -79,14 +79,14 @@ jobs:
             --header "Accept: application/vnd.github+json" \
             --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             --header "X-GitHub-Api-Version: 2022-11-28" \
-            https://ghes71.tspascoal.com/api/v3/repos/joshjohanning-org/insecure-project-3/dependency-graph/snapshots \
+            ${{ github.api_url }}/repos/${{ github.repository }}/dependency-graph/snapshots \
             --data "@server.json"
           curl -L -i \
             --request POST \
             --header "Accept: application/vnd.github+json" \
             --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             --header "X-GitHub-Api-Version: 2022-11-28" \
-            https://ghes71.tspascoal.com/api/v3/repos/joshjohanning-org/insecure-project-3/dependency-graph/snapshots \
+            ${{ github.api_url }}/repos/${{ github.repository }}/dependency-graph/snapshots \
             --data "@server-tests.json"
 
 #       - uses: advanced-security/generate-sbom-action@v1
