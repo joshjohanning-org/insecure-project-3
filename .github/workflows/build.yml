@@ -9,7 +9,7 @@ jobs:
   build:
     name: Build and analyze
     # container: oraclelinux:8
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
 #       - name: Install prereqs
 #         run: |
