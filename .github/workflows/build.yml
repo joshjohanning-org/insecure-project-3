@@ -108,7 +108,10 @@ jobs:
         with:
           name: my-artifact
           path: server*.json
-          
+      - name: Write GitHub context to log
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
     permissions:
       pull-requests: write
       contents: write
