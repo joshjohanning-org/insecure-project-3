@@ -105,10 +105,12 @@ jobs:
           head-ref: ${{ github.sha }}
 
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: my-artifact
           path: server*.json
       - name: Write GitHub context to log
+        if: always()
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
