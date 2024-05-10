@@ -112,6 +112,7 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: echo "$GITHUB_CONTEXT"
+
     permissions:
       pull-requests: write
       contents: write
