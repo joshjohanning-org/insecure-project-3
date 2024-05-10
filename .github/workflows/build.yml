@@ -103,6 +103,12 @@ jobs:
           comment-summary-in-pr: always
           fail-on-scopes: runtime,development
           head-ref: ${{ github.sha }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: server*.json
+          
     permissions:
       pull-requests: write
       contents: write
